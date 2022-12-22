@@ -1,0 +1,15 @@
+<form (ngSubmit)="submit()" [formGroup]="formAddTask" #formDir="ngForm">
+  <label for="input-task">
+    Adicione uma Tarefa
+    <input
+      placeholder="Ex: Comprar ração pro cachorro..."
+      type="text"
+      id="input-task"
+      formControlName="task"
+    >
+    <div *ngIf="task.invalid && formDir.submitted" class="validation-error">
+      <p *ngIf="task.errors?.required">O campo de tarefa não pode estar vazio!</p>
+    </div>
+  </label>
+  <button type="submit">Adicionar Tarefa</button>
+</form>
