@@ -5,11 +5,12 @@
       placeholder="Ex: Comprar ração pro cachorro..."
       type="text"
       id="input-task"
-      formControlName="task"
+      formControlName="description"
     >
     <div *ngIf="task.invalid && formDir.submitted" class="validation-error">
-      <p *ngIf="task.errors?.required">O campo de tarefa não pode estar vazio!</p>
+      <p *ngIf="task.description.errors?.required">O campo de tarefa não pode estar vazio!</p>
     </div>
   </label>
-  <button type="submit">Adicionar Tarefa</button>
+  <button *ngIf="!edited" type="submit">Adicionar Tarefa</button>
+  <button *ngIf="edited" type="submit">Editar Tarefa</button>
 </form>

@@ -8,6 +8,7 @@ import { Task } from './models/Task';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+
   tasks: Task[] = [
     {
       id: 1,
@@ -16,6 +17,18 @@ export class AppComponent implements OnInit {
     }
   ];
 
+  task!: Task;
+
   ngOnInit(): void {
   }
+
+  edit(task: Task): any {
+    this.task = task;
+  }
+
+  delete(task: Task): any {
+    const updatedTasks = this.tasks.filter((taskSaved) => taskSaved.id !== task.id);
+    this.tasks = updatedTasks;
+  }
+
 }

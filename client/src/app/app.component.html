@@ -1,1 +1,10 @@
-<app-form-add-task [tasks]="tasks"></app-form-add-task>
+<app-form-add-task
+  [tasks]="tasks"
+  [taskItem]="task"
+></app-form-add-task>
+
+<app-tasks-list
+  [tasks]="tasks"
+  (edit)="edit($event)"
+  (delete)="delete($event)"
+></app-tasks-list>

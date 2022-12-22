@@ -1,0 +1,22 @@
+<table>
+  <thead>
+    <tr>
+      <th *ngFor="let column of columns">{{ column.toUpperCase() }}</th>
+      <th>EDIT</th>
+      <th>DELETE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let task of tasks">
+      <td>{{ task.id }}</td>
+      <td>{{ task.description }}</td>
+      <td>{{ task.date.toLocaleDateString('pt-br') }}</td>
+      <td>
+        <button type="button" (click)="editTask(task)">Editar</button>
+      </td>
+      <td>
+        <button type="button" (click)="deleteTask(task)">Deletar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
